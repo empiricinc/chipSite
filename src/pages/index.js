@@ -4,10 +4,19 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
+import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 
-const IndexPage = () => (
+
+const IndexPage = (location) => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+    <SEO title="Home" description={'`gatsby`, `application`, `react`'} />
+    <Breadcrumb
+      location={location}
+      crumbLabel="Home"
+      crumbStyle={{ color: "#666" }}
+      crumbActiveStyle={{ color: "orange" }}
+    />
     <h1>Hi people</h1>
     <p>Welcome to your new Gatsby site.</p>
     <p>Now go build something great.</p>
